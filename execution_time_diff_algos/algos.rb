@@ -25,11 +25,11 @@ def largest_contiguous_subsum_smart(list)
     largest_sum = -1.0/0
     list.each_with_index do |n, i|
         if arr[i-1]
-                arr[i] = [n, arr[i-1] + n].max
-            else
-                arr[i] = n
-            end
+            arr[i] = [n, arr[i-1] + n].max
+        else
+            arr[i] = n
         end
+    end
     largest_sum = [largest_sum, arr.max].max
 end
 
